@@ -295,7 +295,7 @@ func fetchItemsFromRSSFeedTask(request rssFeedRequest) ([]rssFeedItem, error) {
 func recursiveFindThumbnailInExtensions(extensions map[string][]gofeedext.Extension) string {
 	for _, exts := range extensions {
 		for _, ext := range exts {
-			if ext.Name == "thumbnail" || ext.Name == "image" {
+			if ext.Name == "content" || ext.Name == "thumbnail" || ext.Name == "image" {
 				if url, ok := ext.Attrs["url"]; ok {
 					return url
 				}
